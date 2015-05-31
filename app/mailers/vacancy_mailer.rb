@@ -1,5 +1,5 @@
 class VacancyMailer < ActionMailer::Base
-  default from: "notifier@rubyjobs.ru"
+  default from: "info@datajobs.ru"
 
   def creation_notice(vacancy)
     @vacancy = vacancy

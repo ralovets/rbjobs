@@ -1,7 +1,9 @@
 /*
  *= require bootstrap
  *= require_self
- *= require_tree .
+ *= require pages
+ *= require vacancies
+ *= require gray
 */
 
 h3 small {

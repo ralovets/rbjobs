@@ -1,9 +1,0 @@
-<% content_for :meta_title, t(".meta_title") %>
-<% content_for :sidebar do %>
-  <h1><%= t(".sidebar.title") %></h1>
-  <p><%= t(".sidebar.description") %></p>
-<% end %>
-
-<div>
-  <%= form_for(@vacancy, html: { class: 'form-horizontal' }) { |f| render f } %>
-</div>

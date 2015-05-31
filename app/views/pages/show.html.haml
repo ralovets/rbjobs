@@ -1,0 +1,5 @@
+- content_for :meta_title, t(".meta_title", :title => @page.title)
+%article
+  .page-header
+    %h1= @page.title
+  = @page.body_html.html_safe

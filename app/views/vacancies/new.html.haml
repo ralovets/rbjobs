@@ -1,0 +1,6 @@
+- content_for :meta_title, t(".meta_title")
+- content_for :sidebar do
+  %h1= t(".sidebar.title")
+  %p= t(".sidebar.description")
+%div
+  = form_for(@vacancy, html: { class: 'form-horizontal' }) { |f| render f }

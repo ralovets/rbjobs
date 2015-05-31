@@ -1,0 +1,59 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => t(".meta_description"), :name => "description"}/
+    %meta{:content => t(".meta_keywords"), :name => "keywords"}/
+    %title= yield(:meta_title)
+    = stylesheet_link_tag "application"
+    = csrf_meta_tags
+    = favicon_link_tag
+  %body
+    .container
+      - flash.each do |key, value|
+        %div{:class => "alert #{key} fade in"}
+          %a.close{"data-dismiss" => "alert", :href => "#"} ×
+          %p= value
+      .row.content-section
+        .span2.sidebar
+          .logo
+            = link_to image_tag("datatau.jpg", :size => "100x100", :alt => t(".meta_title")), root_url
+          .tips
+            = yield(:sidebar)
+          .subscriptions
+            %h5= t("layouts.application.subscriptions")
+            %p
+              %a{:href => "https://www.twitter.com/datajobsru"}
+                %span.label.label-info Twitter
+        .span8.offset2
+          = yield
+      - if current_page?(root_url)
+        %hr/
+        .row.content-section
+          .span2.sidebar
+            %h1 Интересные события и проекты
+          .span8.offset2
+            .row
+              .span4
+                .event-logo
+                  = link_to image_tag('datatau.jpg', :size => '72x72'), |
+                    'http://vk.com/datatau'           |
+                %p
+                  %strong> Data Science: Mining & Deep Machine Learning
+                  \&nbsp;&mdash; платформа, которая позволяет пользователям делиться ссылками на ресурсы, учебные пособия и проекты, имеющие отношение к науке о данных.
+                %p= link_to 'http://vk.com/datatau', 'http://vk.com/datatau'
+      %footer.row.footer
+        .span2
+          %p
+            \&copy;&nbsp;2015
+            %br/
+            = link_to "DataTau", "http://vk.com/datatau"
+        .span4.offset2
+          %br
+        %nav.span4
+          %ul.pull-right
+            %li= link_to t(".pages.about"), page_url(:about)
+            %li= link_to t(".pages.terms"), page_url(:terms)
+            %li= link_to t(".pages.contacts"), page_url(:contacts)
+    = javascript_include_tag "application"
+    = yield(:js)
