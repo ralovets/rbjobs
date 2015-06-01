@@ -13,6 +13,7 @@ gem 'responders'
 gem 'haml-rails'
 gem 'sass-rails'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'unicorn'
 
 group :development do
   gem 'letter_opener'

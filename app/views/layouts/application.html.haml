@@ -57,3 +57,5 @@
             %li= link_to t(".pages.contacts"), page_url(:contacts)
     = javascript_include_tag "application"
     = yield(:js)
+    = render 'shared/metrika'
+    = render 'shared/ga'

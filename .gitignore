@@ -5,10 +5,12 @@ db/schema.rb
 db/*.sqlite3
 log/*.log
 tmp/
+tmp/**/*
 .sass-cache/
 config/database.yml
 config/email.yml
 config/newrelic.yml
+config/unicorn.rb
 Capfile
 config/deploy.rb
 config/deploy
